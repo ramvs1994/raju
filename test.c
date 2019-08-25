@@ -8,7 +8,7 @@
 #define MAX_ALLOWED_WEIGHT_PER_CRATE 15
 
 typedef struct {
-    char string[10];
+    int crate_ID;
     int current_weight;
 } CRATE;
 
@@ -26,6 +26,7 @@ int main() {
 	int j = 0;
 
 	for (i = 0; i < MAX_CRATES; i++) {
+	    crate[i].crate_ID = i + 1;
 	    for ( ;((j < NUMBER_OF_ORDERS) && (crate[i].current_weight <= 15)); j++) {
 		if (orders_weight[j].fit_done == 1) {
 		    continue;
